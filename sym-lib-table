@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name esp-wroom-32)(type Legacy)(uri ${KIPRJMOD}/esp-wroom-32.lib)(options "")(descr ""))
+  (lib (name FT234XD)(type Legacy)(uri C:/Users/kousuke/Desktop/ESP32/ESP32_LED/FT234XD.lib)(options "")(descr ""))
+  (lib (name LDO)(type Legacy)(uri C:/Users/kousuke/Desktop/ESP32/ESP32_LED/LDO.lib)(options "")(descr ""))
+  (lib (name CP21xx)(type Legacy)(uri C:/Users/kousuke/Desktop/ESP32/ESP32_LED/CP21xx.lib)(options "")(descr ""))
+)
