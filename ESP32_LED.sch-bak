@@ -866,6 +866,8 @@ Wire Wire Line
 	7500 4150 7100 4150
 Wire Wire Line
 	7500 4600 7100 4600
+Wire Wire Line
+	7500 5050 7100 5050
 $Comp
 L ESP32_LED-rescue:R-Device R8
 U 1 1 602C5DF2
@@ -888,8 +890,19 @@ F 3 "~" H 6950 4600 50  0001 C CNN
 	1    6950 4600
 	0    1    1    0   
 $EndComp
+$Comp
+L ESP32_LED-rescue:R-Device R10
+U 1 1 602CDD1A
+P 6950 5050
+F 0 "R10" V 6850 5050 50  0000 C CNN
+F 1 "300" V 6950 5050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 6880 5050 50  0001 C CNN
+F 3 "~" H 6950 5050 50  0001 C CNN
+	1    6950 5050
+	0    1    1    0   
+$EndComp
 Wire Wire Line
-	7400 5250 7400 5150
+	7400 6000 7400 5900
 $Comp
 L ESP32_LED-rescue:VBUS-power #PWR029
 U 1 1 603421E2
@@ -902,6 +915,8 @@ F 3 "" H 7300 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 7300 3600
+Wire Wire Line
+	7300 2800 7300 2850
 Text GLabel 4200 6000 2    39   Input ~ 0
 IO15
 Text GLabel 4550 5400 2    39   Input ~ 0
@@ -1033,18 +1048,30 @@ Wire Wire Line
 $Comp
 L ESP32_LED-rescue:GND-power #PWR0105
 U 1 1 607F0043
-P 7400 5250
-F 0 "#PWR0105" H 7400 5000 50  0001 C CNN
-F 1 "GND" H 7400 5100 50  0000 C CNN
-F 2 "" H 7400 5250 50  0001 C CNN
-F 3 "" H 7400 5250 50  0001 C CNN
-	1    7400 5250
+P 7400 6000
+F 0 "#PWR0105" H 7400 5750 50  0001 C CNN
+F 1 "GND" H 7400 5850 50  0000 C CNN
+F 2 "" H 7400 6000 50  0001 C CNN
+F 3 "" H 7400 6000 50  0001 C CNN
+	1    7400 6000
 	1    0    0    -1  
 $EndComp
+$Comp
+L ESP32_LED-rescue:C_Small-Device C8
+U 1 1 6090057D
+P 7300 5700
+F 0 "C8" H 7392 5746 50  0000 L CNN
+F 1 "0.1u" H 7392 5655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 7300 5700 50  0001 C CNN
+F 3 "~" H 7300 5700 50  0001 C CNN
+	1    7300 5700
+	-1   0    0    -1  
+$EndComp
 Wire Wire Line
-	7300 5050 7300 5150
+	7300 5800 7300 5900
 Wire Wire Line
-	7300 5150 7400 5150
+	7300 5900 7400 5900
+Connection ~ 7400 5900
 $Comp
 L ESP32_LED-rescue:5077CR-16SMC2-BK-TR-akizuki J1
 U 1 1 609D86D5
@@ -1183,6 +1210,8 @@ $EndComp
 Wire Wire Line
 	6650 4150 6800 4150
 Wire Wire Line
+	6800 5050 6650 5050
+Wire Wire Line
 	6650 4600 6800 4600
 $Comp
 L ESP32_LED-rescue:R-Device R12
@@ -1304,10 +1333,37 @@ F 3 "~" H 7700 4600 50  0001 C CNN
 	1    7700 4600
 	1    0    0    -1  
 $EndComp
+$Comp
+L ESP32_LED-rescue:Conn_01x03-Connector_Generic J7
+U 1 1 6083C7D9
+P 7700 5050
+F 0 "J7" H 7780 5092 50  0000 L CNN
+F 1 "JST VH" H 7780 5001 50  0000 L CNN
+F 2 "Connector_JST:JST_VH_B3P-VH-B_1x03_P3.96mm_Vertical" H 7700 5050 50  0001 C CNN
+F 3 "~" H 7700 5050 50  0001 C CNN
+	1    7700 5050
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	7500 4500 7300 4500
+Connection ~ 7300 4500
+Wire Wire Line
+	7300 4500 7300 4950
 Wire Wire Line
 	7400 4700 7500 4700
+Connection ~ 7400 4700
+Wire Wire Line
+	7400 4700 7400 5150
+Wire Wire Line
+	7500 4950 7300 4950
+Connection ~ 7300 4950
+Wire Wire Line
+	7300 4950 7300 5400
+Wire Wire Line
+	7400 5150 7500 5150
+Connection ~ 7400 5150
+Wire Wire Line
+	7400 5150 7400 5600
 Wire Wire Line
 	1800 4650 2600 4650
 Wire Wire Line
@@ -1333,6 +1389,10 @@ Wire Wire Line
 Connection ~ 2300 4950
 Wire Wire Line
 	2300 4950 2600 4950
+Text GLabel 6650 5500 0    39   Input ~ 0
+IO32
+Text GLabel 6650 5050 0    39   Input ~ 0
+IO33
 Text GLabel 6650 4150 0    39   Input ~ 0
 IO25
 $Comp
@@ -1390,8 +1450,44 @@ Wire Wire Line
 Connection ~ 10700 1050
 Wire Wire Line
 	10700 1050 10850 1050
+$Comp
+L ESP32_LED-rescue:Conn_01x03-Connector_Generic J8
+U 1 1 607F8E0B
+P 7700 5500
+F 0 "J8" H 7780 5542 50  0000 L CNN
+F 1 "JST VH" H 7780 5451 50  0000 L CNN
+F 2 "Connector_JST:JST_VH_B3P-VH-B_1x03_P3.96mm_Vertical" H 7700 5500 50  0001 C CNN
+F 3 "~" H 7700 5500 50  0001 C CNN
+	1    7700 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L ESP32_LED-rescue:R-Device R11
+U 1 1 607F8F2B
+P 6950 5500
+F 0 "R11" V 6850 5500 50  0000 C CNN
+F 1 "300" V 6950 5500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 6880 5500 50  0001 C CNN
+F 3 "~" H 6950 5500 50  0001 C CNN
+	1    6950 5500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6800 5500 6650 5500
 Text GLabel 6650 4600 0    39   Input ~ 0
 IO26
+Wire Wire Line
+	7100 5500 7500 5500
+Wire Wire Line
+	7500 5400 7300 5400
+Connection ~ 7300 5400
+Wire Wire Line
+	7300 5400 7300 5600
+Wire Wire Line
+	7400 5600 7500 5600
+Connection ~ 7400 5600
+Wire Wire Line
+	7400 5600 7400 5900
 Wire Wire Line
 	6900 3250 6900 3600
 Wire Wire Line
@@ -1411,24 +1507,6 @@ F 3 "~" V 7300 3250 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7300 3600 7300 3350
-Connection ~ 7400 5150
-$Comp
-L ESP32_LED-rescue:C_Small-Device C8
-U 1 1 6090057D
-P 7300 4950
-F 0 "C8" H 7392 4996 50  0000 L CNN
-F 1 "0.1u" H 7392 4905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 7300 4950 50  0001 C CNN
-F 3 "~" H 7300 4950 50  0001 C CNN
-	1    7300 4950
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
-	7300 2800 7300 3150
-Wire Wire Line
-	7400 4700 7400 5150
-Connection ~ 7400 4700
-Wire Wire Line
-	7300 4500 7300 4850
-Connection ~ 7300 4500
+	7300 3150 7300 2850
 $EndSCHEMATC

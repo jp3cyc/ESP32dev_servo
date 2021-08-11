@@ -1,4 +1,6 @@
 (fp_lib_table
   (lib (name ESP32)(type KiCad)(uri ${KIPRJMOD}/ESP32.pretty)(options "")(descr ""))
   (lib (name TypeC)(type KiCad)(uri ${KIPRJMOD}/TypeC.pretty)(options "")(descr ""))
+  (lib (name RS)(type KiCad)(uri S:/Work/KiCad_lib/RS.pretty)(options "")(descr ""))
+  (lib (name universal)(type KiCad)(uri S:/Work/KiCad_lib/universal.pretty)(options "")(descr ""))
 )
